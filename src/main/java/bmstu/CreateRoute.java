@@ -33,23 +33,23 @@ public class CreateRoute {
 
     public Route createRoute() {
         return route(
-            get(() ->
-                parameter(URL, url -> {
-                    parameter(COUNT, count -> {
-                        if (Integer.parseInt(count) == 0) {
-                            return completeWithFuture(this.http.singleRequest(HttpRequest.create(url)));
-                        } else {
-                            return completeWithFuture(
-                                    Patterns.ask(this.confActor
-                                                    , new EmptyMessege(),
-                                                    Duration.ofSeconds(TIMEOUT))
-                                            .thenApply(serverUrl -> (String) serverUrl)
-                                            .thenCompose((serverUrl) -> this.http.singleRequest(HttpRequest.create(this.initUrl(serverUrl, url, Integer.parseInt(count)))))
+                get(() ->
+                        parameter(URL, url ->
+                                parameter(COUNT, count -> {
+                                            if (Integer.parseInt(count) == 0) {
+                                                return completeWithFuture(this.http.singleRequest(HttpRequest.create(url)));
+                                            } else {
+                                                return completeWithFuture(
+                                                        Patterns.ask(this.confActor
+                                                                        ,new EmptyMessege(),
+                                                                        Duration.ofSeconds(TIMEOUT))
+                                                                .thenApply(serverUrl -> (String)serverUrl)
+                                                                .thenCompose((serverUrl) -> this.http.singleRequest(HttpRequest.create(this.initUrl(serverUrl, url, Integer.parseInt(count)))))
+                                                );
+                                            }
+                                        }
+                                ))
+                ));
+    }
 
-                            );
-                        }
-                    });
-                });
-            );
-        );
-    };
+}
