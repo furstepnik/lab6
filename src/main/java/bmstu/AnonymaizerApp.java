@@ -22,6 +22,8 @@ public class AnonymaizerApp {
                     flow,
                     ConnectHttp.toHost(HOST, port),
                     mat);
+            System.out.println("Server online at " + HOST + ":" + port + "/\nPress RETURN to stop...");
+            System.in.read();
             
         }
     }
