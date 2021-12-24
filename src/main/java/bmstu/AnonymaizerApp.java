@@ -26,7 +26,8 @@ public class AnonymaizerApp {
             System.in.read();
             binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
         } catch (NumberFormatException e) {
-            
+            e.printStackTrace();
+            System.exit(-1);
         }
     }
 }
