@@ -8,6 +8,11 @@ public class AnonymaizerApp {
         final ActorSystem system = ActorSystem.crete("routes");
         ActorRef storageActor = system.ActorOf(Pops.create(ConfigStorage.class));
         if (args.length != 1) {
+            System.out.println("Missed argument for Port. Returning...");
+            System.exit(-1);
+        }
+        int port;
+        try {
             
         }
     }
