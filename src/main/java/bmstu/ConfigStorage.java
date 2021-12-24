@@ -1,5 +1,8 @@
 package bmstu;
 
+import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
+
 public class ConfigStorage extends AbstractActor{
     private ArrayList<String> storageServers;
 
