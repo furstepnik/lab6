@@ -8,7 +8,8 @@ public class CreateRoute {
     private final ActorRef confActor;
 
     public CreateRoute(Http http, ActorRef conf) {
-        
+        this.http = http;
+        this.confActor = conf;
     }
 
 }
