@@ -10,6 +10,8 @@ public class ZookeeperWatcher {
     private int currentPort;
 
     public ZookeeperWatcher(ActorRef sActor, int p) throws IOException {
+        this.configStorageActor = sActor;
+        this.zoo = new ZooKeeper(CONNECET, SESSION_TIMEOUT, this);
         
     }
 }
