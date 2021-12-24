@@ -50,6 +50,9 @@ public class ZookeeperWatcher implements Watcher {
         try {
             servers = this.zoo.getChildren(PATH.substring(0, PATH.length() - 2), this);
             ArrayList<String> urlsOfServers = new ArrayList<>();
-            
-        }
+            for (String s : servers) {
+                urlsOfServers.add(new String(this.zoo.getData(PATH.substring(0, PATH.length() - 1) + s, false, null)));
+            }
+            Patterns.ask(this.configStorageActor, new MessageServer(urlsOfServers), 3000);
+        } catch 
 }
