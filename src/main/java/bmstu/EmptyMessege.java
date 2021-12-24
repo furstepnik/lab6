@@ -1,4 +1,4 @@
 package bmstu;
 
-public class EmptyMesseg {
+public class EmptyMessege {
 }
