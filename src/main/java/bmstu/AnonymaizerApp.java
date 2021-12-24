@@ -17,7 +17,7 @@ import akka.stream.javadsl.Flow;
 public class AnonymaizerApp {
     private static final String HOST = "127.0.0.1";
     public static void main(String[] args) throws IOException {
-        final ActorSystem system = ActorSystem.crete("routes");
+        final ActorSystem system = ActorSystem.create("routes");
         ActorRef storageActor = system.ActorOf(Pops.create(ConfigStorage.class));
         if (args.length != 1) {
             System.out.println("Missed argument for Port. Returning...");
