@@ -1,2 +1,4 @@
-package bmstu;public class ConfigStorage {
+package bmstu;
+
+public class ConfigStorage {
 }
