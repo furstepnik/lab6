@@ -54,5 +54,7 @@ public class ZookeeperWatcher implements Watcher {
                 urlsOfServers.add(new String(this.zoo.getData(PATH.substring(0, PATH.length() - 1) + s, false, null)));
             }
             Patterns.ask(this.configStorageActor, new MessageServer(urlsOfServers), 3000);
-        } catch 
+        } catch (KeeperException | InterruptedException e) {
+            
+        }
 }
