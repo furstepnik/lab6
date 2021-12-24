@@ -13,12 +13,13 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.actor.Props;
 
 public class AnonymaizerApp {
     private static final String HOST = "127.0.0.1";
     public static void main(String[] args) throws IOException {
         final ActorSystem system = ActorSystem.create("routes");
-        ActorRef storageActor = system.ActorOf(Pops.create(ConfigStorage.class));
+        ActorRef storageActor = system.ActorOf(Props.create(ConfigStorage.class));
         if (args.length != 1) {
             System.out.println("Missed argument for Port. Returning...");
             System.exit(-1);
