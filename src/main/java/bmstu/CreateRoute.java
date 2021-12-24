@@ -24,6 +24,8 @@ public class CreateRoute {
                 get(() ->
                 parameter(URL_STRING, url -> {
                     if (Integer.parseInt(count) == 0) {
+                        return completeWithFuture(this.http.singleRequest(HttpRequest.create(url)));
+                    } else {
                         
                     }
                 }
