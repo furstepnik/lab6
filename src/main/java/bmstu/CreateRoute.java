@@ -41,7 +41,9 @@ public class CreateRoute {
                                 Patterns.ask(this.confActor
                                         ,new EmptyMessege(),
                                         Duration.ofSeconds(TIMEOUT))
-                                
+                                thenApply(serverUrl -> (String)serverUrl)
+                                        .thenCompose((serverUrl) -> this.http.singleRequest(HttpRequest.create(this.initUrl(serverUrl, url, Integer.parseInt(count)))))
+
                     }
                 }
     }
