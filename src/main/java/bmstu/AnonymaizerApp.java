@@ -17,6 +17,12 @@ public class AnonymaizerApp {
             new ZookeeperWatcher(storageActor, port);
             final Http http = Http.get(system);
             final ActorMaterializer mat = ActorMaterializer.create(system);
+            final Flow<HttpRequest, HttpResponse, NotUsed> flow = new CreateRoute(http, storageActor).createRoute().flow(system, mat);
+            final CompletionStage<ServerBinding> binding = http.bindAndHandle(
+                    flow,
+                    ConnectHttp.toHost(HOST, port),
+                    mat);
+            
         }
     }
 }
