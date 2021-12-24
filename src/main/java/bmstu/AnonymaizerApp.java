@@ -13,7 +13,9 @@ public class AnonymaizerApp {
         }
         int port;
         try {
-            
+            port = Integer.parseInt(args[0]);
+            new ZookeeperWatcher(storageActor, port);
+
         }
     }
 }
