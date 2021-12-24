@@ -55,6 +55,8 @@ public class ZookeeperWatcher implements Watcher {
             }
             Patterns.ask(this.configStorageActor, new MessageServer(urlsOfServers), 3000);
         } catch (KeeperException | InterruptedException e) {
-            
+            e.printStackTrace();
+            System.exit(-1);
         }
+    }
 }
