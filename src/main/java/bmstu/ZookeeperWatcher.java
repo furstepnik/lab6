@@ -26,6 +26,8 @@ public class ZookeeperWatcher {
                             adress.getBytes(),
                             ZooDefs.Ids.OPEN_ACL_UNSAFE,
                             CreateMode.PERSISTENT_SEQUENTIAL);
-        } catch 
+        } catch (KeeperException | InterruptedException e) {
+            
+        }
     }
 }
