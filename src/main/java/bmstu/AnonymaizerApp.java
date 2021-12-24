@@ -16,7 +16,7 @@ public class AnonymaizerApp {
             port = Integer.parseInt(args[0]);
             new ZookeeperWatcher(storageActor, port);
             final Http http = Http.get(system);
-            
+            final ActorMaterializer mat = ActorMaterializer.create(system);
         }
     }
 }
