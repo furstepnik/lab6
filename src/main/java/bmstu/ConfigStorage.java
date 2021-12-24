@@ -1,6 +1,6 @@
 package bmstu;
 
-public class ConfigStorage extends {
+public class ConfigStorage extends AbstractActor{
     private ArrayList<String> storageServers;
 
     @Override
