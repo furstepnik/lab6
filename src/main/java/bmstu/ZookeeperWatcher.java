@@ -36,6 +36,8 @@ public class ZookeeperWatcher implements Watcher {
     public void process(WatchedEvent event) {
         List<String> servers;
         try {
+            servers = this.zoo.getChildren(PATH.substring(0, PATH.length() - 2), this);
+            ArrayList<String> urlsOfServers = new ArrayList<>();
             
         }
 }
