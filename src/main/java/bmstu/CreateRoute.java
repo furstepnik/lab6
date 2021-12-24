@@ -1,2 +1,4 @@
-package bmstu;public class CreateRoute {
+package bmstu;
+
+public class CreateRoute {
 }
