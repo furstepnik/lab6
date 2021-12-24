@@ -5,5 +5,11 @@ public class ZookeeperWatcher {
     private final String HOST = "127.0.0.1";
     private final String PATH = "/servers/s";
     private final Integer SESSION_TIMEOUT = 5000;
-    
+    private final ActorRef configStorageActor;
+    private final ZooKeeper zoo;
+    private int currentPort;
+
+    public ZookeeperWatcher(ActorRef sActor, int p) throws IOException {
+        
+    }
 }
