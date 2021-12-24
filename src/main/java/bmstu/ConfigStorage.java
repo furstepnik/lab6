@@ -6,6 +6,7 @@ public class ConfigStorage {
     @Override
     public Receive createReceive() {
         return Receive =Builder.create()
+        .match(MessageServer.class, msg -> this.storageServers=msg.getUrls())
                 
     }
 }
