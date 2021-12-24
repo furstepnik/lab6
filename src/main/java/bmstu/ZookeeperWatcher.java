@@ -1,5 +1,7 @@
 package bmstu;
 
+import org.apache.zookeeper.CreateMode;
+
 public class ZookeeperWatcher {
     private final String CONNECET = "127.0.0.1:2181";
     private final String HOST = "127.0.0.1";
@@ -17,6 +19,13 @@ public class ZookeeperWatcher {
     }
 
     private void CreateZooServers() {
-        
+        String adress = "http://" + HOST + ":" + this.currentPort;
+        System.out.println(adress);
+        try {
+            this.zoo.create(PATH,
+                            adress.getBytes(),
+                            ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                            CreateMode.PERSISTENT_SEQUENTIAL);
+        } catch 
     }
 }
