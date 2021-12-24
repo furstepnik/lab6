@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5691e6c-6f35-493b-8ec6-5595b3eae2d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/MessageServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/MessageServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bmstu/AnonymaizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bmstu/AnonymaizerApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
