@@ -1,2 +1,4 @@
-package bmstu;public class AnonymaizerApp {
+package bmstu;
+
+public class AnonymaizerApp {
 }
