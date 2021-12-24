@@ -1,5 +1,7 @@
 package bmstu;
 
+import java.time.Duration;
+
 public class CreateRoute {
     private final String URL = "url";
     private final String COUNT = "count";
@@ -26,7 +28,11 @@ public class CreateRoute {
                     if (Integer.parseInt(count) == 0) {
                         return completeWithFuture(this.http.singleRequest(HttpRequest.create(url)));
                     } else {
-                        
+                        return completeWithFuture(
+                                Patterns.ask(this.confActor
+                                        ,new EmptyMessege(),
+                                        Duration.ofSeconds(TIMEOUT))
+                                
                     }
                 }
     }
