@@ -15,6 +15,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.actor.Props;
 
+
 public class AnonymaizerApp {
     private static final String HOST = "127.0.0.1";
     public static void main(String[] args) throws IOException {
