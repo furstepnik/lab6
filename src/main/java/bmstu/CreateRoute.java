@@ -10,6 +10,7 @@ import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
 import akka.pattern.Patterns;
+import static akka.http.javadsl.server.Directives.*;
 
 public class CreateRoute {
     private final String URL = "url";
@@ -33,7 +34,7 @@ public class CreateRoute {
     public Route createRoute() {
         return route(
                 get(() ->
-                parameter(URL_STRING, url -> {
+                parameter(URL, url -> {
                     if (Integer.parseInt(count) == 0) {
                         return completeWithFuture(this.http.singleRequest(HttpRequest.create(url)));
                     } else {
@@ -41,7 +42,7 @@ public class CreateRoute {
                                 Patterns.ask(this.confActor
                                         ,new EmptyMessege(),
                                         Duration.ofSeconds(TIMEOUT))
-                                thenApply(serverUrl -> (String)serverUrl)
+                                        .thenApply(serverUrl -> (String)serverUrl)
                                         .thenCompose((serverUrl) -> this.http.singleRequest(HttpRequest.create(this.initUrl(serverUrl, url, Integer.parseInt(count)))))
 
                         );
