@@ -13,7 +13,10 @@ public class CreateRoute {
     }
 
     private String initUrl(String serverUrl, String url, int count) {
-        Srting ur = String.valueOf()
+        Srting ur = String.valueOf(Uri.create(serverUrl).query(Query.create(Pair.create(URL_STRING, url),
+        Pair.create(COUNT_STRING, String.valueOf(count - 1)))));
+        System.out.println("hi" + ur);
+        return ur;
     }
 
 }
