@@ -44,10 +44,11 @@ public class CreateRoute {
                                 thenApply(serverUrl -> (String)serverUrl)
                                         .thenCompose((serverUrl) -> this.http.singleRequest(HttpRequest.create(this.initUrl(serverUrl, url, Integer.parseInt(count)))))
 
+                        );
                     }
-                }
-                )
-    }
+                        }
+                ))
+        ));
     }
 
 }

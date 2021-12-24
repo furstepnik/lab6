@@ -12,7 +12,7 @@ public class ConfigStorage extends AbstractActor{
     public Receive createReceive() {
         return ReceiveBuilder.create()
         .match(MessageServer.class, msg -> this.storageServers=msg.getUrls())
-        .match(EmptyMessage.class, msg -> sender().tell(storageServers.get(new Random().nextInt(storageServers.size())), self()))
+        .match(EmptyMessege.class, msg -> sender().tell(storageServers.get(new Random().nextInt(storageServers.size())), self()))
         .build();
     }
 }
