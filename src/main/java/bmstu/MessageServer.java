@@ -7,7 +7,9 @@ public class MessageServer {
     public MessageServer(ArrayList<String> urls) {
         this.urls = urls;
     }
-    public ArrayList<String> gerUrls() {
+    public ArrayList<String> getUrls() {
         return this.urls;
     }
+
+
 }
